@@ -1,0 +1,306 @@
+@import url('https: //fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --bg-color: #1f242d;  --secound-bg-color: #323946;*/
+/* :root {
+    --bg-color: #084778;
+    --secound-bg-color: #1f303e;
+    --text-color: #fff;
+    --main-color: #ffbe2e;
+} */
+:root {
+    --bg-color: #081b29;
+    --secound-bg-color: #ededed;
+    --text-color: #ededed;
+    --secound-text-color: #000;
+    --main-color: #00abf0;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--secound-bg-color);
+    color: var(--text-color);
+}
+
+span {
+    color: var(--main-color);
+}
+
+.btn {
+    /* display: inline-block; */
+    margin-left: 20px;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    color: var(--text-color);
+    transition: .5s ease;
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+
+}
+
+.btn:hover {
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.profileProject {
+    display: flex;
+    padding: 15rem;
+    background: var(--bg-color);
+}
+
+.profileProject-img img {
+    width: 25vw;
+    border-radius: 15px;
+}
+
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+}
+
+.profileProject-content h2 {
+    text-align: left;
+    line-height: 1.2;
+    margin-left: 30px;
+}
+
+.profileProject-content h3 {
+    font-size: 2.6rem;
+    margin-left: 30px;
+}
+
+.profileProject-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+    margin-left: 30px;
+}
+
+.profileProject-content a {
+    margin-left: 30px;
+    width: 25%;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    color: var(--text-color);
+    transition: .5s ease;
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.deskripsi {
+    background: var(--secound-bg-color);
+}
+
+.deskripsi-content {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+    margin: 10rem;
+}
+
+.deskripsi-content h3 {
+    font-size: 2rem;
+}
+
+/* .deskripsi-content p {
+    font-size: 1.6rem;
+} */
+
+.deskripsi-content a {
+    margin-top: 3rem;
+}
+
+.deskripsi-content h2 {
+    text-align:left;
+    font-size: 4.5rem;
+    color: var(--secound-text-color);
+}
+
+.deskripsi-content p {
+    text-align:left;
+    font-size: 1.6rem;
+    color: var(--secound-text-color);
+}
+
+.deskripsi-content p2 {
+    text-align:justify;
+    font-size: 1.6rem;
+    color: var(--secound-text-color);
+    padding: 25px;
+}
+
+.Tools,
+.Method,
+.Bahasa,
+.Contoh,
+.Model{
+    margin-top: 2rem;
+}
+
+.deskripsi-content p3 {
+    text-align:left;
+    margin-top: 2em;
+    font-size: 1.6rem;
+    color: var(--secound-text-color);
+    font-weight: 700;
+}
+
+.desTamplate{
+    margin-top: 30px;
+}
+
+.link a{
+    color:var(--main-color);
+    font-size: 1.6rem;
+}
+
+.tamplatesSpek {
+    margin-top: 30px;
+}
+
+
+.methodProject-img {
+    width: 20vw;
+    align-self: center;
+}
+
+.imagesSlidShow {
+    display: flex;
+    width: 100%;
+    transition: 2s;
+    
+}
+
+.imagesSlidShow img{
+    width: 100%;
+}
+
+.wraper {
+    width: 500px;
+    margin:  auto;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+#slide-1:target ~ .imagesSlidShow{
+    margin-left: 0px;
+    
+}
+
+#slide-2:target ~ .imagesSlidShow{
+    margin-left: -100%;
+}
+
+#slide-3:target ~ .imagesSlidShow{
+    margin-left: -200%;
+}
+
+#slide-4:target ~ .imagesSlidShow{
+    margin-left: -300%;
+}
+
+#slide-5:target ~ .imagesSlidShow{
+    margin-left: -400%;
+}
+
+#slide-6:target ~ .imagesSlidShow{
+    margin-left: -500%;
+}
+
+.navigation {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin-top: -30px;
+}
+
+.navigation a {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    background-color: #ededed;
+    border-radius: 50%;
+    margin: 3px;
+    transition: 1s;
+}
+
+.navigation a:hover {
+    background-color: #00abf0;
+}
+.navigation a.active {
+    background-color: var(--main-color);
+    width: 25px;
+    border-radius: 40%;
+    /* Atur warna latar belakang */
+    /* Atur gaya lainnya untuk menandai navigasi yang aktif */
+}
+@media screen and (max-width: 800px){
+    .wraper{
+        width : 90%;
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+}
+
+.footer-text p {
+    font-size: 1.6rem;
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border-radius: .8rem;
+    transition: .5s ease;
+}
+
+.footer-iconTop a:hover {
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    color: var(--bg-color);
+}
