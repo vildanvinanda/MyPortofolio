@@ -195,10 +195,9 @@ span {
     display: flex;
     width: 100%;
     transition: 2s;
-    
 }
 
-.imagesSlidShow img{
+.imagesSlidShow img {
     width: 100%;
 }
 

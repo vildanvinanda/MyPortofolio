@@ -71,45 +71,51 @@
                     </div>
 
                     <div class="navigation">
-                        <a href="#slide-1"></a>
-                        <a href="#slide-2"></a>
-                        <a href="#slide-3"></a>
-                        <a href="#slide-4"></a>
-                        <a href="#slide-5"></a>
-                        <a href="#slide-6"></a>
+                        <a href="#slide-1" class="active" onclick="currentSlide(1)"></a>
+                        <a href="#slide-2" onclick="currentSlide(2)"></a>
+                        <a href="#slide-3" onclick="currentSlide(3)"></a>
+                        <a href="#slide-4" onclick="currentSlide(4)"></a>
+                        <a href="#slide-5" onclick="currentSlide(5)"></a>
+                        <a href="#slide-6" onclick="currentSlide(6)"></a>
                     </div>
 
                 </div>
 
-                <script type="text/javascript">
-                let slideIndex = 0;
+                <script>
+                    let slideIndex = 1;
 
-                    function showSlides() {
-                        let i;
-                        const slides = document.getElementsByClassName("imagesSlidShow");
-                        const navigation = document.querySelectorAll(".navigation a");
+                    function showSlide(n) {
+                        const slides = document.querySelectorAll('.imagesSlidShow img');
+                        const navigation = document.querySelectorAll('.navigation a');
 
-                        for (i = 0; i < slides.length; i++) {
-                            slides[i].style.display = "none";
+                        for (let i = 0; i < slides.length; i++) {
+                            slides[i].style.display = 'none';
                         }
 
-                        slideIndex++;
-
-                        if (slideIndex > slides.length) {
-                            slideIndex = 1;
+                        for (let i = 0; i < navigation.length; i++) {
+                            navigation[i].classList.remove('active');
                         }
 
-                        for (i = 0; i < navigation.length; i++) {
-                            navigation[i].classList.remove("active"); // Hapus kelas 'active' dari semua navigasi
-                        }
-
-                        slides[slideIndex - 1].style.display = "block";
-                        navigation[slideIndex - 1].classList.add("active"); // Tambahkan kelas 'active' ke navigasi yang sesuai
-
-                        setTimeout(showSlides, 5000); // Ganti slide setiap 5 detik
+                        slides[n - 1].style.display = 'block';
+                        navigation[n - 1].classList.add('active');
                     }
 
-                    showSlides();
+                    function currentSlide(n) {
+                        slideIndex = n;
+                        showSlide(slideIndex);
+                    }
+
+                    function autoSlide() {
+                        if (slideIndex >= 6) {
+                            slideIndex = 0;
+                        }
+                        slideIndex++;
+                        showSlide(slideIndex);
+                        setTimeout(autoSlide, 5000);
+                    }
+
+                    showSlide(slideIndex);
+                    autoSlide();
                 </script>
                 
                 <div class="tamplatesSpek">

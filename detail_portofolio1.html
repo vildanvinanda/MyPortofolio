@@ -41,54 +41,54 @@
                 <div class="desTamplate">
                     <div class="wraper">
                         <div class="slides">
-                            <span id="slide-1"></span>
-                            <span id="slide-2"></span>
-                    
                             <div class="imagesSlidShow">
                                 <img src="images/BG1INCOVER1.png" alt="">
-                            </div>
-                            <div class="imagesSlidShow">
                                 <img src="images/BG2INCOVER1.png" alt="">
                             </div>
                         </div>
                     </div>
-
+                
                     <div class="navigation">
-                        <a href="#slide-1"></a>
-                        <a href="#slide-2"></a>
+                        <a href="#slide-1" class="active" onclick="currentSlide(1)"></a>
+                        <a href="#slide-2" onclick="currentSlide(2)"></a>
                     </div>
-
                 </div>
+                
+                <script>
+                    let slideIndex = 1;
 
-                <script type="text/javascript">
-                let slideIndex = 0;
+                    function showSlide(n) {
+                        const slides = document.querySelectorAll('.imagesSlidShow img');
+                        const navigation = document.querySelectorAll('.navigation a');
 
-                    function showSlides() {
-                        let i;
-                        const slides = document.getElementsByClassName("imagesSlidShow");
-                        const navigation = document.querySelectorAll(".navigation a");
-
-                        for (i = 0; i < slides.length; i++) {
-                            slides[i].style.display = "none";
+                        for (let i = 0; i < slides.length; i++) {
+                            slides[i].style.display = 'none';
                         }
 
-                        slideIndex++;
-
-                        if (slideIndex > slides.length) {
-                            slideIndex = 1;
+                        for (let i = 0; i < navigation.length; i++) {
+                            navigation[i].classList.remove('active');
                         }
 
-                        for (i = 0; i < navigation.length; i++) {
-                            navigation[i].classList.remove("active"); // Hapus kelas 'active' dari semua navigasi
-                        }
-
-                        slides[slideIndex - 1].style.display = "block";
-                        navigation[slideIndex - 1].classList.add("active"); // Tambahkan kelas 'active' ke navigasi yang sesuai
-
-                        setTimeout(showSlides, 5000); // Ganti slide setiap 5 detik
+                        slides[n - 1].style.display = 'block';
+                        navigation[n - 1].classList.add('active');
                     }
 
-                    showSlides();
+                    function currentSlide(n) {
+                        slideIndex = n;
+                        showSlide(slideIndex);
+                    }
+
+                    function autoSlide() {
+                        if (slideIndex >= 2) {
+                            slideIndex = 0;
+                        }
+                        slideIndex++;
+                        showSlide(slideIndex);
+                        setTimeout(autoSlide, 5000);
+                    }
+
+                    showSlide(slideIndex);
+                    autoSlide();
                 </script>
                 
                 <div class="tamplatesSpek">
